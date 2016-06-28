@@ -20,4 +20,3 @@ python classify.py <nb/svm/lr> <True/False> <number in [0, 100]>
 where `True` indicates positive/negative classification, and `False` indicates 5-star classification.
 
 
-
