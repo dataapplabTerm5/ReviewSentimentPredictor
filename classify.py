@@ -9,10 +9,9 @@ from sklearn.pipeline import Pipeline
 from numpy import mean
 from yelp_utils import numLines, loadData
 from yelp_load import numLines, loadData
-<<<<<<< HEAD
+
 from sklearn import tree
-=======
->>>>>>> a44f0530ddf5941bb938e48a86a41145406bf852
+
 
 def classify(technique, posneg, percentData):
     #filename = 'yelp_training_set_review.json'
@@ -30,11 +29,9 @@ def classify(technique, posneg, percentData):
         clf_obj = SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42)
     elif technique == 'lr':
         clf_obj = LogisticRegression()
-<<<<<<< HEAD
     elif technique == 'dt':
         clf_obj = tree.DecisionTreeClassifier(min_samples_split=40)
-=======
->>>>>>> a44f0530ddf5941bb938e48a86a41145406bf852
+
 
     start_time = time.time()
     text_clf = Pipeline([('vect', CountVectorizer(stop_words='english', min_df=1)),
@@ -59,11 +56,8 @@ def valid_args(avail_techniques, technique, posneg, percentData):
             (int(percentData) >= 0 and int(percentData) <= 100)
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     techniques = {'nb': 'Naive Bayes', 'svm': 'Support Vector Machines', 'lr': 'Logistic Regression', 'dt':'Decision Tree'}
-=======
-    techniques = {'nb': 'Naive Bayes', 'svm': 'Support Vector Machines', 'lr': 'Logistic Regression'}
->>>>>>> a44f0530ddf5941bb938e48a86a41145406bf852
+
     
     try:
         technique = sys.argv[1].lower() # nb or svm or lr
